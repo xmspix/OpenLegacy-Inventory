@@ -22,3 +22,35 @@ The application needs to expose the following APIs:
 - [x] Data should be persisted on H2 DB using JPA.
 - [x] Need to pack and run the application from docker.
 - [x] Need to send a link to GitHub for source and docker hub for docker image
+
+# Usage
+
+## Docker
+
+```
+docker pull xmspix/openlegacy-inventory:server
+docker pull xmspix/openlegacy-inventory:client
+```
+
+## Server
+
+H2 Database
+
+```
+url: http://localhost:8080/h2/
+need to change JDBC URL to "jdbc:h2:mem:testdb"
+username: h2
+password: (empty)
+```
+
+Swagger API
+
+```
+http://localhost:8080/swagger-ui.html
+```
+
+## Client - Angular
+
+```
+http://localhost:4200/
+```
