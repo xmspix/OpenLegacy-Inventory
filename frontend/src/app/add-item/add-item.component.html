@@ -1,0 +1,34 @@
+<h1>Add New Item</h1>
+
+<div class="form">
+  <form
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+    [ngFormOptions]="{ updateOn: 'blur' }"
+  >
+    <label for="name">Product Name: </label>
+    <input type="text" id="name" name="name" required ngModel />
+    <label for="amount">Amount: </label>
+    <input
+      type="text"
+      id="amount"
+      name="amount"
+      type="number"
+      required
+      ngModel
+    />
+    <label for="inventoryCode">Inventory Code: </label>
+    <input
+      type="text"
+      id="inventoryCode"
+      name="inventoryCode"
+      required
+      ngModel
+    />
+
+    <input type="submit" value="Submit" />
+  </form>
+
+  <!-- <p>Form valid: {{ form.valid }}</p> -->
+  <!-- <p>Form value: {{ form.value | json }}</p> -->
+</div>

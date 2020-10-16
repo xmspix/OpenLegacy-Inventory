@@ -1,0 +1,46 @@
+<div class="info">
+  For editing the items click on the name / amount / code of the item and edit
+  directly
+</div>
+
+<h1>Inventory</h1>
+
+<div>
+  <table>
+    <tr>
+      <th>Item No</th>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Inventory Code</th>
+      <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let item of items">
+      <td>{{ item.itemNo }}</td>
+      <!-- <td contenteditable="true" (input)="item.name = $event.target.innerText"> -->
+      <td
+        contenteditable="true"
+        (keyup)="onKey(item, { name: $event.target.innerText })"
+      >
+        {{ item.name }}
+      </td>
+      <td
+        contenteditable="true"
+        (keyup)="onKey(item, { amount: $event.target.innerText })"
+      >
+        {{ item.amount }}
+      </td>
+      <td
+        contenteditable="true"
+        (keyup)="onKey(item, { inventoryCode: $event.target.innerText })"
+      >
+        {{ item.inventoryCode }}
+      </td>
+      <td>
+        <button (click)="onDelete(item.itemNo)" class="btn-remove">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
